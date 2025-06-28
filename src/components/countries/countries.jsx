@@ -1,8 +1,7 @@
-function Countries() {
+export default function Countries(){
     return (
-     <div>
-        
-     </div>
-
+        <div>
+            <h1>Okay</h1>
+        </div>
     )
 }
