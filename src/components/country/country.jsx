@@ -1,7 +1,10 @@
-export default function Country({country}) {
+export default function Country({ country }) {
     return (
         <div>
             <h3>Name:{country.name.common}</h3>
-        </div>
+            <img src={country.flags.png} alt="" />
+            <p>Population:{country.population}</p>
+
+        </div >
     )
 } 
