@@ -5,8 +5,8 @@ const countriesPromise = fetch('https://jsonplaceholder.typicode.com/users').the
 function App() {
   return (
     <>
-      <Suspense fallback="Loading...">
-        <Countries></Countries>
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <Countries countriesPromise={countriesPromise}></Countries>
       </Suspense>
 
     </>
