@@ -1,14 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import './country.css'
 import './countries.css'
 export default function Country({ country }) {
+    const [visited, setVisited] = useState(false)
+    const handleVisited = () => {
+      
+        setVisited(!visited);
+    }
     return (
-        <div className="country">
+        <div className={`country ${visited && 'country-visited'}`}>
             <h3>Name:{country.name.common}</h3>
             <div className="counties">
                 <img src={country.flags.png} alt="" />
                 <p>Population:{country.population}</p>
-                <button>Visited</button>
+                <button className={visited ? 'btn-visited':'btn-not-visited' } onClick={handleVisited}>{visted ? 'visited' : 'Not visited'}</button>
             </div>
 
 
