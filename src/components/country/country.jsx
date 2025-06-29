@@ -15,6 +15,7 @@ export default function Country({ country, handleVisitedCountries }) {
                 <img src={country.flags.png} alt="" />
                 <p>Population:{country.population}</p>
                 <button className={visited ? 'btn-visited':'btn-not-visited' } onClick={handleVisited}>{visted ? 'visited' : 'Not visited'}</button>
+                <button onClick={()=>handleVisitedFlags(country.flags.png)}>Add Visited Flag</button>
             </div>
         </div >
     )
