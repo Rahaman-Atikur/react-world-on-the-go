@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import './country.css'
 import './countries.css'
-export default function Country({ country }) {
-    const [visited, setVisited] = useState(false)
+export default function Country({ country, handleVisitedCountries }) {
+    const [visited, setVisited] = useState(false);
+    console.log(handleVisitedCountries);
     const handleVisited = () => {
-      
         setVisited(!visited);
+        handleVisitedCountries();
     }
     return (
         <div className={`country ${visited && 'country-visited'}`}>
@@ -15,8 +16,6 @@ export default function Country({ country }) {
                 <p>Population:{country.population}</p>
                 <button className={visited ? 'btn-visited':'btn-not-visited' } onClick={handleVisited}>{visted ? 'visited' : 'Not visited'}</button>
             </div>
-
-
         </div >
     )
 } 
